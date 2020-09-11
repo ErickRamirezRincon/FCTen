@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+        
+	<context:component-scan base-package="mx.com.fincomun.tenderos.controller">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan> 
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="order" value="1" />
+		<property name="messageConverters">
+			<list>
+				<!-- Default converters -->
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ CRON ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	     
+    <bean id ="runArticuloTask" class="mx.com.fincomun.tenderos.task.ArticuloTask" />       
+     
+    <bean name="runArticuloJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<!-- property name="jobClass" value="mx.com.fincomun.tenderos.task.ArticuloJob" /-->
+		<property name="jobClass" value="mx.com.fincomun.tenderos.task.ArticuloJob" />
+		<property name="jobDataMap">
+            <map>
+                <entry key="ArticuloTask" value-ref="ArticuloTask" />
+            </map>
+        </property>
+        <property name="durability" value="true" />
+	</bean>
+	
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="runArticuloJob" />
+		<property name="cronExpression" value="0 0 7 ? * * *"/>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="runArticuloJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	<context:component-scan base-package="mx.com.fincomun.tenderos.service"/>
+	<context:component-scan base-package="mx.com.fincomun.tenderos.dao"/>
+	<context:component-scan base-package="mx.com.fincomun.tenderos.task"/>
+	
+	
+</beans>

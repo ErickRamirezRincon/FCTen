@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring Framework 3.0.6.RELEASE">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="owner.project.facets" value="spring.core"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/clientefabricacreditoservice"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="oracle.eclipse.tools.weblogic.lib.system">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/cxf-2.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/httpasyncclient-4.0-beta3.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/httpclient-4.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/httpcore-nio-4.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/jaxb-impl-2.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/jaxb-xjc-2.2.6-b31.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/neethi-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/wsdl4j-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/Lib-BuroBB/nuevas/Prueba2/xmlschema-core-2.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/QiuboWS(SVN)/QiuboServicesWSJob/WebContent/WEB-INF/lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/ProyectosFinComun/EclipseProjects-SVN/QiuboWS(SVN)/QiuboServicesWSJob/WebContent/WEB-INF/lib/slf4j-simple-1.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mgascav/Downloads/spring-security-crypto-3.1.0.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
